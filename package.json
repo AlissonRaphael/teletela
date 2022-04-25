@@ -1,0 +1,36 @@
+{
+  "name": "teletela",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "big",
+    "brother",
+    "1984",
+    "orwell",
+    "teletela"
+  ],
+  "author": "Alisson Oliveira",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack serve",
+    "build": "NODE_ENV=production webpack"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/react-dom": "^18.0.2",
+    "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.5.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.3.1"
+  }
+}
