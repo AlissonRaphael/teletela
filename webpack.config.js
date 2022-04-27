@@ -8,7 +8,7 @@ module.exports = {
 
   devtool: isDevelopment ? 'eval-source-map' : 'source-map',
 
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  entry: path.resolve(__dirname, 'src', 'index.jsx'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,13 +28,13 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx']
   },
 
   module: {
     rules: [
       {
-        test: /\.(tsx|ts|jsx|js)$/i,
+        test: /\.(jsx|js)$/i,
         exclude: /node_modules/,
         use: 'babel-loader'
       },
