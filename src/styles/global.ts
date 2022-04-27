@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
+import BackgroundImage from '../assets/cover.jpg'
 
 export const GlobalStyle = createGlobalStyle`
   :root {
     --primary: #da0037;
     --primary-light: #ff5361;
+    --primary-light-text: #fff;
     --primary-dark: #a00012;
 
     --secondary: #444444;
@@ -21,7 +23,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--background);
+    color: var(--primary-light-text);
+    background: url(${BackgroundImage});
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
     -webkit-font-smoothing: antialiased;
   }
 
