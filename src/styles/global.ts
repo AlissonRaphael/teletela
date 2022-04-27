@@ -1,6 +1,19 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --primary: #da0037;
+    --primary-light: #ff5361;
+    --primary-dark: #a00012;
+
+    --secondary: #444444;
+    --secondary-light: #6f6f6f;
+    --secondary-dark: #1d1d1d;
+
+    --black: #171717;
+    --grey: #EDEDED;
+  }
+
   * {
     padding: 0px;
     margin: 0px;
