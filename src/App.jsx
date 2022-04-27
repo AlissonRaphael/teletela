@@ -1,9 +1,10 @@
 import { GlobalStyle } from "./styles/global"
+import Input from './components/Input'
 
 export default function App () {
   return (
     <>
-      <h1>Alisson</h1>
+      <Input/>
       <GlobalStyle/>
     </>
   )
