@@ -10,7 +10,7 @@ export const Container = styled.div`
 `
 
 export const InputContainer = styled.div`
-    width: 40%;
+  width: 40%;
 
   input {
     font-size: 1rem;
@@ -19,5 +19,9 @@ export const InputContainer = styled.div`
     border-radius: 0.2rem;
     width: 100%;
     outline: none;
+
+    .display-none {
+      display: none;
+    }
   }
 `
