@@ -14,26 +14,26 @@ export default function Input ({ praiseNumber }) {
     const { value } = event.target || ''
     setRealInput(value)
 
-    const [_question, _response ] = value.split('?')
+    const [_question, _response ] = value.split(';')
+    const responseSize = _response ? _response.length : 0
 
-    setQuestion(_question+'? ')
+    setQuestion(_question)
     setResponse(_response)
 
-    const responseSize = _response ? _response.length : 0
     let praiseSize = 'short'
 
-    if (responseSize > 22)
+    if (responseSize > 20)
       praiseSize = 'medium'
 
-    if (responseSize > 44)
+    if (responseSize > 35)
       praiseSize = 'long'
 
-    if (responseSize > 66)
+    if (responseSize > 50)
       praiseSize = 'extra'
 
     const phrase = praise[praiseNumber][praiseSize].slice(0, responseSize)
 
-    setFakeInput(question+phrase)
+    setFakeInput(_question+' '+phrase)
   }
 
   return (
