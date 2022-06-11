@@ -1,12 +1,10 @@
 import { GlobalStyle } from "./styles/global"
-import Input from './components/Input'
+import Terminal from "./components/Terminal"
 
 export default function App () {
-  const praiseNumber = Math.floor(Math.random() * 4)
-
   return (
     <>
-      <Input praiseNumber={praiseNumber}/>
+      <Terminal/>
       <GlobalStyle/>
     </>
   )
