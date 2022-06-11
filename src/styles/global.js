@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import BackgroundImage from '../assets/cover.jpg'
+import BackgroundImage from '../assets/noise.jpg'
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -24,11 +24,20 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     color: var(--primary-light-text);
-    background: url(${BackgroundImage});
-    background-color: #000;
-    background-repeat: no-repeat;
+    background: transparent url(${BackgroundImage}) repeat 0 0;
+    background-size: 400px 400px;
+    animation: noise-animation 0.1s infinite;
     background-size: cover;
     -webkit-font-smoothing: antialiased;
+
+    @keyframes noise-animation {
+      0% { background-size: 200px 200px }
+      20% { background-size: 130px 130px }
+      40% { background-size: 400px 400px }
+      60% { background-size: 80px 80px }
+      80% { background-size: 500px 500px }
+      100% { background-size: 350px 350px }
+    }
   }
 
   body, input, textarea, button {
