@@ -27,7 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     background: transparent url(${BackgroundImage}) repeat 0 0;
     background-size: 400px 400px;
     animation: noise-animation 0.1s infinite;
-    background-size: cover;
     -webkit-font-smoothing: antialiased;
 
     @keyframes noise-animation {
