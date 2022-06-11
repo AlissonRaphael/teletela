@@ -1,11 +1,13 @@
 import { useState, useRef } from 'react'
-import { Container, InputContainer } from "./style"
 
+import { Container, InputStyle, Cursor } from "./style"
 import { praise } from './praise'
+
 
 export default function Input ({ praiseNumber }) {
   const [realInput, setRealInput] = useState('')
   const [fakeInput, setFakeInput] = useState('')
+  const [visible, setVisible] = useState(false)
   const [question, setQuestion] = useState('')
   const [response, setResponse] = useState('')
   const input = useRef(null)
@@ -36,25 +38,37 @@ export default function Input ({ praiseNumber }) {
     setFakeInput(_question+' '+phrase)
   }
 
+  const handleKeyUp = (event) => {
+    const { keyCode } = event || ''
+
+    if (keyCode === 13)
+      setVisible(true)
+  }
+
   return (
-    <Container>
-      <InputContainer>
-        <input
-          className="display-none"
+    <>
+      <Container onClick={() => input.current.focus()}>
+        <span>{`>`}</span>
+        <InputStyle
           type="text"
-          ref={input}
-          value={realInput}
-          onChange={(event) => handleChange(event)}
-        />
-        <input
-          type="text"
-          placeholder="Faça-me um elogio e eu responderei suas perguntas"
+          size={fakeInput.length*0.46}
           value={fakeInput}
           onClick={() => input.current.focus()}
+          onChange={() => {}}
         />
-        <div>Pergunta: {question}</div>
-        <div>Resposta: {response}</div>
-      </InputContainer>
-    </Container>
+        <Cursor/>
+
+      </Container>
+
+      <input
+        style={{ opacity: 0 }}
+        className="display-none"
+        type="text"
+        ref={input}
+        value={realInput}
+        onChange={(event) => handleChange(event)}
+        onKeyUp={(event) => handleKeyUp(event)}
+      />
+    </>
   )
 }

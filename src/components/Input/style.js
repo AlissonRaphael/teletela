@@ -1,27 +1,35 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  margin: 0.2rem 0;
+  width: 100%;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  span {
+    margin-right: 0.2rem;
+  }
 `
 
-export const InputContainer = styled.div`
-  width: 40%;
+export const InputStyle = styled.input`
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: ${props => props.size+'rem'};
+`
 
-  input {
-    font-size: 1rem;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 0.2rem;
-    width: 100%;
-    outline: none;
+export const Cursor = styled.div`
+  height: 1rem;
+  width: 0.5rem;
+  min-width: 0.5rem;
+  background-color: #5eff94;
+  animation: cursor 1s infinite;
 
-    .display-none {
-      display: none;
-    }
+  @keyframes cursor {
+    0% { opacity: 1 }
+    49% { opacity: 1 }
+    50% { opacity: 0 }
+    100% { opacity: 0 }
   }
 `
