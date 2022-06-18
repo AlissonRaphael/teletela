@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 
-import { Container, InputStyle, Cursor } from "./style"
 import { praise } from './praise'
+import { InputStyle, FieldStyle, Cursor } from "./style"
 
 
 export default function Input ({ praiseNumber }) {
@@ -14,6 +14,10 @@ export default function Input ({ praiseNumber }) {
 
   const handleChange = (event) => {
     const { value } = event.target || ''
+
+    if (value.length > 115)
+      return
+
     setRealInput(value)
 
     const [_question, _response ] = value.split(';')
@@ -47,19 +51,16 @@ export default function Input ({ praiseNumber }) {
 
   return (
     <>
-      <Container onClick={() => input.current.focus()}>
-        <span>{`>`}</span>
-        <InputStyle
+      <InputStyle onClick={() => input.current.focus()}>
+        <FieldStyle
           type="text"
-          size={fakeInput.length*0.46}
           value={fakeInput}
           onClick={() => input.current.focus()}
+          size={fakeInput.length*0.72}
           onChange={() => {}}
         />
         <Cursor/>
-
-      </Container>
-
+      </InputStyle>
       <input
         style={{ opacity: 0 }}
         className="display-none"

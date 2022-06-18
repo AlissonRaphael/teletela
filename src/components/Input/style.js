@@ -1,17 +1,26 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  margin: 0.2rem 0;
-  width: 100%;
-
+export const InputStyle = styled.div`
+  width: 80%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
-  span {
-    margin-right: 0.2rem;
+  position: relative;
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 20%;
+    height: 1px;
+    width: 60%;
+    background-color:  rgba(255,255,255,0.1);
   }
 `
 
-export const InputStyle = styled.input`
+export const FieldStyle = styled.input`
+  font-size: 1.3rem;
   color: #fff;
   background: transparent;
   border: none;
@@ -20,9 +29,8 @@ export const InputStyle = styled.input`
 `
 
 export const Cursor = styled.div`
-  height: 1rem;
+  height: 1.3rem;
   width: 0.5rem;
-  min-width: 0.5rem;
   background-color: #5eff94;
   animation: cursor 1s infinite;
 
