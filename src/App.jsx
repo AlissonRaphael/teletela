@@ -1,10 +1,11 @@
 import { GlobalStyle } from "./styles/global"
-import Terminal from "./components/Terminal"
+
+import Container from './components/Container'
 
 export default function App () {
   return (
     <>
-      <Terminal/>
+      <Container/>
       <GlobalStyle/>
     </>
   )
