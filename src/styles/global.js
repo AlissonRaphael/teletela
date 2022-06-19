@@ -20,6 +20,13 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
   }
 
   body {
