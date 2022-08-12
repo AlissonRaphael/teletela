@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const InputStyle = styled.div`
+export const InputStyle = styled(motion.div)`
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 
   position: relative;
 

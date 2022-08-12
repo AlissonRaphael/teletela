@@ -4,11 +4,9 @@ import { praise } from './praise'
 import { InputStyle, FieldStyle, Cursor } from "./style"
 
 
-export default function Input ({ praiseNumber }) {
+export default function Input ({ praiseNumber, handleSetResponse, handleSetIsOk }) {
   const [realInput, setRealInput] = useState('')
   const [fakeInput, setFakeInput] = useState('')
-  const [visible, setVisible] = useState(false)
-  const [question, setQuestion] = useState('')
   const [response, setResponse] = useState('')
   const input = useRef(null)
 
@@ -23,7 +21,6 @@ export default function Input ({ praiseNumber }) {
     const [_question, _response ] = value.split(';')
     const responseSize = _response ? _response.length : 0
 
-    setQuestion(_question)
     setResponse(_response)
 
     let praiseSize = 'short'
@@ -45,13 +42,21 @@ export default function Input ({ praiseNumber }) {
   const handleKeyUp = (event) => {
     const { keyCode } = event || ''
 
-    if (keyCode === 13)
-      setVisible(true)
+    if (keyCode === 13) {
+      handleSetResponse(response)
+      handleSetIsOk(true)
+    }
   }
 
   return (
     <>
-      <InputStyle onClick={() => input.current.focus()}>
+      <InputStyle
+        onClick={() => input.current.focus()}
+        initial={{ opacity: 0, x: -200 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 1, x: -200 }}
+        transition={{ duration: 1.5, type: 'spring' }}
+      >
         <FieldStyle
           type="text"
           value={fakeInput}
@@ -62,7 +67,7 @@ export default function Input ({ praiseNumber }) {
         <Cursor/>
       </InputStyle>
       <input
-        style={{ opacity: 0 }}
+        style={{ opacity: 0, height: '1px' }}
         className="display-none"
         type="text"
         ref={input}
